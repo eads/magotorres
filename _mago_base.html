@@ -1,0 +1,62 @@
+{% extends "_base.html" %}
+
+{% if PATH.startswith("en/") %}
+  {% set lang = "en" %}
+{% else %}
+  {% set lang = "es" %}
+{% endif %}
+
+{# blank out nav and footer #}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{# set up content block with sub blocks #}
+{% block content %}
+<div class="container-fluid">
+  <div class="col-md-3 page-nav">
+    <div class="page-nav-inner">
+      {% block page_nav %}
+      <h1>Language specific page nav</h1>
+      {% endblock %}
+      <hr/>
+      <div class="lang-selector">
+        <span class="lang-label">{% if lang == "en" %}Language{% else %}Idiom{% endif %}</span>
+        <a href="../en" role="button" class="btn {% if lang == "en" %}btn-primary{% else %}btn-default{% endif %}">
+          EN
+        </a>
+        <a href="../es" role="button" class="btn {% if lang == "es" %}btn-primary{% else %}btn-default{% endif %}">
+          ES
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="cv">
+      {% block cv %}
+      <h1>Language specific CV stuff</h1>
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block library_scripts %}
+{{ super() }}
+<script type="text/javascript" src="//use.typekit.net/obg0hmr.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script>
+function setFixedWidth() {
+  $('.page-nav-inner').width($('.page-nav').width());
+}
+$(document).ready(function () {
+  setFixedWidth();
+  $(window).resize(setFixedWidth);
+});
+</script>
+{% endblock library_scripts %}
+
+{% block library_css %}
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+{% endblock library_css %}
