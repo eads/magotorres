@@ -1,23 +1,32 @@
 {% extends "_mago_base.html" %}
 
-{% block page_nav %}
-<h1>Margarita Torres, PhD</h1>
-<p>Professor, Coordinator of the Right To Information Program</p>
-<p>Iberoamericana University, Mexico City</p>
-<hr />
-<div class="row">
-  <div class="col-xs-6">
-    <p><a href="https://www.facebook.com/mago.torres"><i class="fa fa-facebook"></i> Facebook</a></p>
-    <p><a href="http://twitter.com/magiccia"><i class="fa fa-twitter"></i> Twitter</a></p>
-  </div>
-  <div class="col-xs-6">
-    <p><a href="http://mx.linkedin.com/in/magotorres"><i class="fa fa-linkedin"></i> Linkedin</a></p>
-    <p><a href="mailto:magiccia@gmail.com"><i class="fa fa-envelope"></i> Email</a></p>
-  </div>
-</div>
-{% endblock %}
 
-{% block cv %}
-<img src="../img/headshot.jpg"/>
-{{ read_file("en/cv.md")|markdown }}
+
+{% block body %}
+<h1 id="docencia"> Docencia </h1>
+<h2> Licenciatura </h2> 
+<ul> 
+{% for curso in docencia_licenciatura %}
+<li> <strong>{{curso.nombre}}</strong> <br/> {{curso.description}} </li>
+{% endfor %}
+ </ul>
+<h2> Posgrado </h2>
+<ul> 
+{% for curso in docencia_posgrado %}
+<li> <strong>{{curso.nombre}}</strong> <br/> {{curso.description}} </li>
+{% endfor %}
+ </ul>
+
+<h1 id="conferencias"> Conferencias </h1>
+
+
+
+
+<h1 id="medios"> Participación en medios </h1>
+
+
+
+
+<h1 id="cv"> CV Completo </h1>
+
 {% endblock %}

@@ -1,5 +1,6 @@
 body {
- background-color:white;
+  padding-top: 60px;
+  background-color:white;
 }
 h1, h2, h3, h4, h5, h6, .page-nav p {
   font-family: "iskra",sans-serif;
@@ -16,26 +17,8 @@ h1, h2, h3, h4, h5, h6, .page-nav p {
   width: 25px;
   text-align: center;
 }
-.cv {
-  font-family: Georgia,serif;
-  font-size: 16px;
-  max-width: 650px;
-  padding-top: 30px;
-}
-.cv img {
-  width: 100%;
-  max-width: 540px;
-}
-.cv h1 {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #bbb;
-}
-.lang-label {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-right: 5px;
-  color: #666;
-}
+
+
 @media (min-width: 992px) {
   .page-nav-inner {
     position: fixed;

@@ -7,7 +7,6 @@
 {% endif %}
 
 {# blank out nav and footer #}
-{% block nav %}{% endblock %}
 {% block footer %}{% endblock %}
 
 {# set up content block with sub blocks #}
@@ -16,23 +15,27 @@
   <div class="col-md-3 page-nav">
     <div class="page-nav-inner">
       {% block page_nav %}
-      <h1>Language specific page nav</h1>
+      <h1>Margarita Torres, PhD</h1>
+<p>Professor, Coordinator of the Right To Information Program</p>
+<p>Iberoamericana University, Mexico City</p>
+<hr />
+<div class="row">
+  <div class="col-xs-6">
+    <p><a href="https://www.facebook.com/mago.torres"><i class="fa fa-facebook"></i> Facebook</a></p>
+    <p><a href="http://twitter.com/magiccia"><i class="fa fa-twitter"></i> Twitter</a></p>
+  </div>
+  <div class="col-xs-6">
+    <p><a href="http://mx.linkedin.com/in/magotorres"><i class="fa fa-linkedin"></i> Linkedin</a></p>
+    <p><a href="mailto:estela.torres@ibero.mx"><i class="fa fa-envelope"></i> Email</a></p>
+  </div>
+</div>
+
       {% endblock %}
-      <hr/>
-      <div class="lang-selector">
-        <a href="../en/index.html" role="button" class="btn {% if lang == "en" %}btn-primary{% else %}btn-default{% endif %}">
-          EN
-        </a>
-        <a href="../es/index.html" role="button" class="btn {% if lang == "es" %}btn-primary{% else %}btn-default{% endif %}">
-          ES
-        </a>
-        <span class="lang-label">{% if lang == "en" %}Language{% else %}Idioma{% endif %}</span>
-      </div>
     </div>
   </div>
   <div class="col-md-9">
-    <div class="cv">
-      {% block cv %}
+    <div class="body">
+      {% block body %}
       <h1>Language specific CV stuff</h1>
       {% endblock %}
     </div>
