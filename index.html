@@ -3,6 +3,7 @@
 
 
 {% block body %}
+
 <h1 id="docencia"> Docencia </h1>
 <h2> Licenciatura </h2> 
 <ul> 
@@ -18,7 +19,11 @@
  </ul>
 
 <h1 id="conferencias"> Conferencias </h1>
-
+<ul> 
+{% for charlas in conferencias %}
+<li> <strong>{{charlas.fecha}}</strong> <br/> {{charlas.lugar}} </li>
+{% endfor %}
+ </ul>
 
 
 
